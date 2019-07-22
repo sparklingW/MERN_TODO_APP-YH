@@ -18,7 +18,7 @@ class Inputs extends Component {
 		success: false,
 		requestError: true,
 		showError: false,
-		display: true,
+		display: false,
 	};
 	onEmailInput = ({target: {value}}) => {
 		this.setState({email: value});

@@ -21,7 +21,7 @@ class Inputs extends Component {
 		validPassword: true,
 		validConfirm: true,
 		showError: false,
-		display: true,
+		display: false,
 	};
 	static getDerivedStateFromProps(props, state) {
 		if(!props.isEmail || !state.validEmail) {
