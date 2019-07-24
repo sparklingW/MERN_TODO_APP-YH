@@ -51,7 +51,7 @@ function* userOut() {
 		console.log(data);
 		localStorage.removeItem('token');
 		localStorage.removeItem('owner');
-		history.push('/users/login');
+		history.push('/');
 		yield put(onUserLogOutSuccess());
 	} catch (e) {
 
@@ -73,24 +73,9 @@ function* getUser({name, email, password, requestNewError}) {
 		};
 		console.log(userInfo);
 		yield put(newUserSuccess(userInfo));
-		yield history.push('/users/login');
+		yield history.push('/');
 	} catch (e) {
 		console.log(e.message);
-		// Swal.fire({
-		// 	type: 'error',
-  	// 	// title: '<b>Oops...</b>',
-		// 	html: `
-		// 	<div style="font-family: Righteous, cursive">
-		// 	<h1>Something Went Wrong</h1>
-		// 	<hr />
-		// 	<span style="font-family: Righteous, cursive">Please enter correct data.</span>
-		// 	<span style="font-family: Righteous, cursive">If you enter correct data but stile have an error</span>
-		// 	<span style="font-family: Righteous, cursive">It could mean that email already exist, try another email</span>
-		// 	</div>
-		// 	`,
-		// 	confirmButtonColor: `#4592af`,
-		// 	background: `#f4f4f4`
-		// });
 		yield put(newUserError({
 			requestNewError
 		}));
@@ -122,19 +107,6 @@ function* userLogin({email, password}) {
 		yield history.push('/events/show');
 	} catch (e) {
 		console.log('ERRRRRROR');
-		// Swal.fire({
-		// 	type: 'error',
-  	// 	// title: '<b>Oops...</b>',
-		// 	html: `
-		// 	<div style="font-family: Righteous, cursive">
-		// 	<h1>Something Went Wrong</h1>
-		// 	<hr />
-		// 	<span style="font-family: Righteous, cursive">Email or password are incorrect!</span>
-		// 	</div>
-		// 	`,
-		// 	confirmButtonColor: `#4592af`,
-		// 	background: `#f4f4f4`
-		// });
 		yield put(onUserLoginError({
 			requestError: true,
 		}));

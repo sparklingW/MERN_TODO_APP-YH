@@ -128,7 +128,6 @@ class Inputs extends Component {
 	}
 	onSubmit = e => {
 		e.preventDefault();
-		// console.log(`${this.state.valid}`);
 		const { email, password, showError } = this.state;
 		console.log(`${showError}`);
 		if(this.state.showError === true) {
@@ -138,15 +137,16 @@ class Inputs extends Component {
 			email,
 			password,
 		};
+		// this.setState({display: true}, () => console.log("Valid", this.state.display));
 		const isValid = this.validate();
 		if(!isValid) {
 			console.log('Error');
-			this.setState({display: true});
 			this.props.onLogin(user);
+			this.setState({display: true}, () => console.log("Display",this.state.display));
 		} else {
 			console.log('From else');
+			this.setState({display: false}, () => console.log("Display -- ",this.state.display));
 			this.props.onLogin(user);
-			this.setState({display: true});
 		}
 	};
 	render () {

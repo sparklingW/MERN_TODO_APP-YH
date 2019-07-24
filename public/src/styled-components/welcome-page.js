@@ -41,31 +41,27 @@ export const ButtonsContainer = styled.div`
   padding: 25px;
 `;
 export const ButtonRegister = styled.button`
-  background: #4ace6f;
+  background: #e76165;
   font-family: 'Muli', sans-serif;
-  color: #fff;
-  border: 1px solid #4ace6f;
+  color: #f1f1f1;
+  border: 1px solid #e76165;
   margin: 0 25px 0 0; 
   padding: 12px;
   border-radius: 6px 6px;
   cursor: pointer;
   width: 150px;
   &:hover {
-      background: #4ecd5b;
+      background: #e76165;
   }
 `;
 export const ButtonLogin = styled.button`
-  background: #4592af;
+  background: #e76165;
   font-family: 'Muli', sans-serif;
   margin: 0 0 0 25px; 
-  color: #f6f5f5;
-  border: 1px solid #4592af;
+  color: #f1f1f1;
+  border: 1px solid #e76165;
   padding: 12px;
   border-radius: 6px 6px;
   cursor: pointer;
   width: 150px;
-  &:hover {
-      background: rgba(69,146,175,0.94);
-      color: #f6f5f5;
-  }
 `;

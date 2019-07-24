@@ -29,10 +29,10 @@ class App extends Component {
           <PrivateRoute path='/events/edit/' component={EditEvent} />
           <PrivateRoute path='/events/show/' component={EventsShow} />
           <PrivateRoute path='/users/info' component={UserInfo} />
-          <Route exact path='/' component={Welcome}/>
+          {/*<Route exact path='/' component={Welcome}/>*/}
           <Route path='/users/register' component={Register}/>
           <Route
-            path='/users/login'
+            path='/'
             component={() => (
                 <Login onLogin={this.onLoginTrigger}/>
             )}

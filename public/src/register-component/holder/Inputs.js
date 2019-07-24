@@ -100,7 +100,7 @@ class Inputs extends Component {
 			this.setState({disabled: false}) :
 			this.setState({disabled: true});
 	};
-	onLoginPage = (  ) => history.push('/users/login');
+	onLoginPage = (  ) => history.push('/');
 	clickFunc = () => {
 		this.setState({display: false});
 	};
@@ -172,13 +172,13 @@ class Inputs extends Component {
 		}
 		//Password validation
 		if(!password) {
-			passwordError = 'Password length must be 3 or more symbols';
+			passwordError = 'Password cannot be an empty string';
 			this.setState({
 				passwordError,
 				validPassword: false,
 			}, () => console.log(`From setState: ${this.state.passwordError}`));
 			console.log(passwordError);
-		} else if(password.length >= 3) {
+		} else if(password.length >= 1) {
 			if(!password.match(register.password)) {
 				passwordError = "Some data";
 				this.setState({
