@@ -52,19 +52,6 @@ router.post('/register', [
 			await newUser.save();
 			res.status(200).json(newUser);
 		}
-		// if(!name.match(regs.register.name)) {
-		//     return res.status(401).send('Name is not valid');
-		// }if(!password.match(regs.register.password)) {
-		//     return res.status(401).send('Password is not valid');
-		// } else {
-		//Crypt password with salt
-			// const hashed = await _crypt(password);
-			// user.password = hashed.password;
-			// user.salt = hashed.salt;
-			// //Add new user to db
-			// await user.save();
-			// res.status(200).json(user);
-		// }
 	} catch (e) {
 		console.log(`${e.message}`);
 		res.status(500).send('Server error');
@@ -87,7 +74,6 @@ router.post('/login', [
 				return res.status(422).json({message: 'User not found'});
 			}
 		});
-		// console.info(find);
 		const payload = {
 			user: {
 				id: find._id
@@ -105,13 +91,6 @@ router.post('/login', [
 						return res.status(422).send("Error was occured");
 					} 
 					return res.status(201).json({ token, find: find._id, email });
-					// 	if (!err) {
-					// 	return res.status(200).json({ token, find: find._id, email });
-					// }
-					// console.log('err');
-					// return res.status(401).json({message: 'Password failed'});
-					//If passwords is equal give to the user token
-					// res.status(200).json({ token, find: find._id });
 			   });
 			});
 	} catch (e) {
@@ -124,14 +103,6 @@ router.post('/login', [
 // @    Public
 router.get('/me', auth, async (req, res) => {
 	res.send('Hello');
-	// try {
-	//     //Get access to the home page of the user
-	//     const user = await User.findById(req.user.id).select('-password').select('-salt');
-	//     res.json({user: user});
-	// } catch (e) {
-	//     console.log(e.message);
-	//     res.status(500).send('Server error');
-	// }
 });
 router.get('/info', auth, async (req, res) => {
 	try {
